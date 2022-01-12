@@ -63,3 +63,63 @@ for (let i = 0; i < rapperArray.length; i++){
   }
 }
 console.log("And if you don't know, now you know.");
+
+console.log('------Valid Or Invalid-----')
+const getUserChoice = userInput => {
+  userInput = userInput.toLowerCase();
+  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors')
+  {
+    console.log("Valid --> " + userInput)
+    return userInput;
+  } else {
+    console.log('Invalid Input!');
+  }
+};
+getUserChoice('rock');
+
+console.log('---------Math.Random--------')
+function getComputerChoice()
+{
+  var r = Math.floor(Math.random() * 4);
+  //console.log(r);
+  switch (r)
+  {
+    case 0:
+      return console.log(r + ' Valid -> rock');
+      break;
+    case 1:
+      return console.log(r + ' Valid -> paper');
+      break;
+    case 2:
+      return console.log(r + ' Valid -> scissors');
+      break;
+    default:
+      console.log(r + ' Not Valid!');
+  }
+}
+getComputerChoice();
+
+
+console.log('-----------Winner-----------')
+function determineWinner(userChoice, computerChoice)
+{
+  computerChoice = Math.floor(Math.random() * 4);
+  if (userChoice === computerChoice)
+  {
+    console.log('Rock Winner');
+  }
+  else if (userChoice === computerChoice)
+  {
+    console.log('Paper Winner');
+  }
+   else if (userChoice === computerChoice)
+  {
+    console.log('scissors Winner');
+  }
+  else
+  {
+    console.log("The game has been Tie!");
+  }
+}
+
+determineWinner(0, 0);

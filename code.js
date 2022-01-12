@@ -67,7 +67,7 @@ console.log("And if you don't know, now you know.");
 console.log('------Valid Or Invalid-----')
 const getUserChoice = userInput => {
   userInput = userInput.toLowerCase();
-  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors')
+  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb')
   {
     console.log("Valid --> " + userInput)
     return userInput;
@@ -104,7 +104,11 @@ console.log('-----------Winner-----------')
 function determineWinner(userChoice, computerChoice)
 {
   computerChoice = Math.floor(Math.random() * 4);
-  if (userChoice === computerChoice)
+  if(userchoice = 'bomb')
+  {
+    console.log('Bomb winner');
+  }
+  else if (userChoice === computerChoice)
   {
     console.log('Rock Winner');
   }
@@ -123,3 +127,14 @@ function determineWinner(userChoice, computerChoice)
 }
 
 determineWinner(0, 0);
+
+console.log('---------Play Game----------')
+const playGame = () => {
+   const userChoice = getUserChoice('bomb');
+   const computerChoice = getComputerChoice();
+   console.log('You threw: ' + userChoice);
+   console.log('The computer threw:' + computerChoice);
+   console.log(determineWinner(userChoice, computerChoice));
+};
+
+playGame();

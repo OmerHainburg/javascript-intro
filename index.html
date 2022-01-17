@@ -10,7 +10,45 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>JavaScripts</h2>
+    <h1 id="main-header">DOM Omer</h1>
+    <p>Paragraph One</p>
+    <h1 class="subheader">DOM Enrique</h1>
+    <p>Paragraph Two</p>
+    <h1 id="main-header">DOM Zubair</h1>
+    <p>Paragraph Three</p>
+
+    <div id="div1">The text above has been created dynamically.</div>
+    <br>
+    <button onclick=alerter()>Click</button>
+    <br>
+    <button onclick={alerter()}>Click</button>
+    <br>
+    <button onclick="alerter()">Click</button>
+
+
+    <br>
+    <br>
+    <div class="block">
+        <h1>Click / Location</h1>
+        We want to redirect the user to another page when they clicks on this
+        button.
+        <br />
+        <a 
+          target="_blank"
+          href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event"
+          >Help</a
+        >
+        <a
+          target="_blank"
+          href="https://developer.mozilla.org/en-US/docs/Web/API/Document/location"
+          >Help</a
+        >
+      </div>
+  
+      <div class="block">
+        <button id="buttonone" onclick="redirect1()">Redirect</button>
+      </div>
+
     <script src="code.js"></script>
 </body>
 </html>

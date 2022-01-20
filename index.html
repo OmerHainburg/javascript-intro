@@ -24,31 +24,57 @@
     <button onclick={alerter()}>Click</button>
     <br>
     <button onclick="alerter()">Click</button>
-
-
     <br>
     <br>
     <div class="block">
-        <h1>Click / Location</h1>
+        <h1 class="omer">Click / Location</h1>
         We want to redirect the user to another page when they clicks on this
         button.
         <br />
-        <a 
+        <a id="a1" class="notredirect"
           target="_blank"
           href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event"
-          >Help</a
-        >
-        <a
+          >Help</a>
+        <a id="a2" class="redirect"
           target="_blank"
           href="https://developer.mozilla.org/en-US/docs/Web/API/Document/location"
-          >Help</a
-        >
+          >Help</a>
       </div>
-  
       <div class="block">
-        <button id="buttonone" onclick="redirect1()">Redirect</button>
-      </div>
-
-    <script src="code.js"></script>
+          <span><button id="buttonone" onclick="redirect(a1)">Click Event</button></span>
+          <span><button id="buttonone" onclick="redirect(a2)">Location</button></span>  
+     </div>
+     <br>
+     <br>
+     <h1>Conditional OnClick</h1>
+     <div class="block">
+        <span><button>Not Redirect</button></span>
+        <span><button class="redirectFunction" onclick="redirectFunction()">Redirect</button></span>  
+   </div>
+   <br>
+   <br>
+   <h1>OnKeyUp</h1>
+   <div class="block">
+         <input type="text" id="fname" onkeyup="myFunction()">
+         <p>Text Value: <span id="demo"></span></p>
+   </div>
+   <br>
+   <br>
+   <h1>OnSubmit</h1>
+   <div class="block">
+   <form id="myForm" action="/action_page.php">
+        First name: <input type="text" name="fname" id="fname"><br>
+        <input type="button" onclick="onSubmitFunction()" value="Submit">
+  </form>
+  <p>Text Value: <span id="demo"></span></p>
+</div>
+   <br>
+   <br>
+   <p>
+    Focus this iframe and press any key to get the
+    current timestamp for the keypress event.
+  </p>
+  <p>timeStamp: <span id="time">-</span></p>
+    <script src="index.js"></script>
 </body>
 </html>

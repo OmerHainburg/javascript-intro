@@ -316,12 +316,12 @@ const notify = (name) => {
 notify('Omer');
 
 // Function 2
-setTimeout(function() {
-  console.log("1000ms == 1 second");
-}, 1000);
+//setTimeout(function() {
+  //console.log("1000ms == 1 second");
+//}, 1000);
 
-setTimeout(() => console.log("1000ms == 1 second")
-)
+//setTimeout(() => console.log("1000ms == 1 second")
+//)
 
 document.getElementById("main-header").style.background="red";
 document.getElementById("main-header").style.height="100px";
@@ -329,7 +329,7 @@ document.getElementById("main-header").innerHTML="Hello Omer!Are you busy?";
 
 document.getElementsByTagName("p")[0].style.background="green";
 
-document.getElementsByClassName("subheader")[1].innerHTML="Change Inner HTML";
+//document.getElementsByClassName("subheader")[1].innerHTML="Change Inner HTML";
 
 document.createElement("h1").innerHTML="New h1 Element";
 
@@ -351,17 +351,296 @@ function addElement () {
 }
 
 const alerter = () => alert("Boom");
-
 document.getElementById("main-header").addEventListener('click', alerter);
 
-const redirect = () => location.replace("https://www.w3schools.com");
+//Redirect
+const redirect = (a) => document.location.href = a;
+document.getElementById("buttonone").addEventListener("click", redirect(a));
+
+//Conditional OnClick
+const redirect1 = () => document.location.href = "https://developer.mozilla.org/en-US/docs/Web/API/Document/location";
+document.querySelector(".redirect").addEventListener("click", redirect1)
+
+function myFunction(a) {
+  document.location.href = a;
+}
 
 
+function redirectFunction() {
+     document.location.href = ("https://developer.mozilla.org/en-US/docs/Web/API/Document/location");
+ }
+ function notRedirectFunction() {
+  document.location.href = "";
+}
+ document.querySelector(".redirect") .addEventListener("click", notRedirectFunction);
+ document.querySelector(".notredirect") .addEventListener("click", notRedirectFunction);
 
-const redirect1 = () =>  document.location.href = "https://www.w3schools.com";
+ function myFunction() {
+  var x = document.getElementById("fname").value;
+  document.getElementById("demo").innerHTML = x;
+}
 
-//function redirect1()
-//{
-  //document.location.href = "https://www.w3schools.com"
-//}
-document.getElementById("buttonone").addEventListener("click", redirect1);
+
+//document.getElementById("myForm").onsubmit = function() {onSubmitFunction()};
+const inputField = document.getElementById("fname");
+
+function onSubmitFunction() {
+
+  if (inputField === "")
+  {
+    alert("Empty");
+  }
+  else{
+    inputField = document.getElementById("fname").value;
+    document.getElementById("demo").innerHTML = inputField;
+  }
+  
+  document.getElementById("myForm").submit();
+}
+
+let readMore = document.getElementById('read-more');
+let moreInfo = document.getElementById('more-info');
+
+// Write your code here:
+function showInfo()
+{
+  moreInfo.style.display ="block";  
+}
+
+eventTarget.addEventListener('click', showInfo);
+
+readMore.addEventListener('click', showInfo);
+
+//--------------------------//
+let view = document.getElementById('view-button');
+let close = document.getElementById('close-button');
+let codey = document.getElementById('codey');
+
+let open = function() {
+  codey.style.display = 'block';
+  close.style.display = 'block';
+};
+
+let hide = function() {
+  codey.style.display = 'none';
+  close.style.display = 'none';
+};
+
+view.addEventListener('click', open);
+close.addEventListener('click', hide);
+
+// Write your code here
+function textChange()
+{
+  view.innerHTML = "Hello, World!";
+}
+view.addEventListener('click', textChange);
+
+function textReturn()
+{
+   view.innerHTML = "View";
+}
+view.addEventListener('click', textReturn);
+
+view.onevent('click', textChange);
+
+close.addEventListener('click', textReturn);
+
+//------------Removing Event Handlers-------------------//
+let fortunes = ["A beautiful, smart, and loving person will be coming into your life.",
+  "A fresh start will put you on your way.",
+  "A golden egg of opportunity falls into your lap this month.",
+  "A smile is your personal welcome mat.",
+  "All your hard work will soon pay off."
+]
+
+let button = document.getElementById('fortuneButton');
+let fortune = document.getElementById('fortune');
+
+function fortuneSelector(){
+  let randomFortune = Math.floor(Math.random() * fortunes.length);
+  return fortunes[randomFortune];
+}
+
+function showFortune(){
+  fortune.innerHTML = fortuneSelector();
+  button.innerHTML = "Come back tomorrow!";
+  button.style.cursor = "default";
+
+  //add your code here
+
+}
+button.removeEventListener('click', showFortune);
+
+//---------------------Event Object Properties---------------//
+let social = document.getElementById('social-media');
+let share = document.getElementById('share-button');
+let text = document.getElementById('text');
+
+// Write your code below
+let sharePhoto = function(event) {
+  event.target.style.display = "none";
+  text.innerHTML = event.timeStamp;
+}
+share.addEventListener('click', sharePhoto);
+
+//------------------Event Types--------------------------//
+let randomColor = 'rgb(' + colorValue() + ',' + colorValue() + ',' + colorValue() + ')';
+
+// This variable stores the "Pick a Color" button
+let button = document.getElementById('color-button');
+
+// This variable stores the "Mystery Color" button
+let mysteryButton = document.getElementById('next-button');
+
+// This random number function will create color codes for the randomColor variable
+function colorValue() {
+  return Math.floor(Math.random() * 256);
+}
+
+function colorChange(event){
+  event.target.style.background = randomColor;
+}
+
+button.addEventListener('click', colorChange);
+mysteryButton.addEventListener('wheel', colorChange);
+
+
+//-----------------Mouse Events------------------//
+// These variables store the boxes on the side
+let itemOne = document.getElementById('list-item-one');
+let itemTwo = document.getElementById('list-item-two');
+let itemThree = document.getElementById('list-item-three');
+let itemFour = document.getElementById('list-item-four');
+let itemFive = document.getElementById('list-item-five');
+let resetButton = document.getElementById('reset-button');
+
+// This function programs the "Reset" button to return the boxes to their default styles
+// These variables store the boxes on the side
+let itemOne = document.getElementById('list-item-one');
+let itemTwo = document.getElementById('list-item-two');
+let itemThree = document.getElementById('list-item-three');
+let itemFour = document.getElementById('list-item-four');
+let itemFive = document.getElementById('list-item-five');
+let resetButton = document.getElementById('reset-button');
+
+// This function programs the "Reset" button to return the boxes to their default styles
+let reset = function() {
+  itemOne.style.width = ''
+  itemTwo .style.backgroundColor = ''
+  itemThree.innerHTML = 'The mouse must leave the box to change the text'
+  itemFive.style.display = "none"
+};
+resetButton.onclick = reset;
+
+// Write your code here
+function increaseWidth()
+{
+   itemOne.style.width = '500px';
+}
+
+itemOne.addEventListener('mouseover', increaseWidth);
+
+function changeBackground()
+{
+  itemTwo.style.backgroundColor = 'green'
+}
+
+itemTwo.addEventListener('mouseup', changeBackground);
+
+function changeText()
+{
+  itemThree.innerHTML = 'The mouse has left   the element';
+}
+
+itemThree.addEventListener('mouseout', changeText);
+
+function showItem()
+{
+  itemFive.style.display = 'block';
+}
+
+itemFour.addEventListener('mousedown', showItem);
+
+//------------------Keyboard Events----------------//
+let ball = document.getElementById('float-circle');
+
+// Write your code below
+function up()
+{
+  ball.style.bottom = '250px';
+}
+
+function down()
+{
+  ball.style.bottom = '50px';
+}
+
+document.addEventListener('keydown', up);
+
+document.addEventListener('keyup', down);
+
+//-----------------Sleep Debt Calculator----------------//
+const getSleepHours  = day => {
+  if (day === 'monday'){
+    return 8;
+  } else if (day === 'tuesday') {
+    return 8;
+  } else if (day === 'wednesday') {
+    return 8;
+  } else if (day === 'thursday') {
+    return 8;
+  } else if (day === 'friday') {
+    return 8;
+  } else if (day === 'saturday') {
+    return 8;
+  } else if (day === 'sunday') {
+    return 8;
+  } 
+ };
+ 
+ console.log(getSleepHours('tuesday')); 
+ 
+ //Task 5
+ const getActualSleepHours = () => 
+   getSleepHours('monday') + 
+   getSleepHours('tuesday') + 
+   getSleepHours('wednesday') +
+   getSleepHours('thursday') + 
+   getSleepHours('friday') + 
+   getSleepHours('saturday') + 
+   getSleepHours('sunday');
+ 
+ //Function To Calculate Sleep Hours
+ const getIdealSleepHours = () => {
+   const idealHours = 7.5;
+   return idealHours * 7;
+ };
+ 
+ //Sum Of Total Number OF Weeks Sleep
+ console.log(getActualSleepHours());
+ //Calculate Ideal Sleep Hours
+ console.log(getIdealSleepHours());
+ 
+ //Task 8
+ const calculateSleepDebt = () => {
+   //Task 9
+     const actualSleepHours =      
+     getActualSleepHours();
+     const idealSleepHours = 
+     getIdealSleepHours();
+ 
+     //Task 10
+     if (actualSleepHours === idealSleepHours)
+     { console.log('Equal');
+     } else if (actualSleepHours >   
+       idealSleepHours)
+      { console.log('Greater');
+      } else { console.log('Less'); }
+ };
+ 
+ //Task 11
+ calculateSleepDebt();
+
+ 
+

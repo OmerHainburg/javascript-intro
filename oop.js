@@ -185,51 +185,123 @@ class Dog {
   console.log(surgeonRomero.remainingVacationDays);
 
   //---------------------Inheritance II--------------------//
-  class HospitalEmployee{
-    constructor(name){
+//   class HospitalEmployee{
+//     constructor(name){
+//       this._name = name;
+//       this._remainingVacationDays = 20;
+//     }
+  
+//     get name(){
+//     return this._name;
+//     }
+  
+//     get remainingVacationDays(){
+//       return this._remainingVacationDays;
+//     }
+  
+//     takeVacationDays(daysOff) {
+//         this._remainingVacationDays -= daysOff;
+//       }
+//   }
+  
+//   class Doctor{
+//     constructor(name, insurance)
+//     {
+//       this._name = name;
+//       this._insurance = insurance;
+//       this._remainingVacationDays = 20;
+//     }
+  
+//     takeVacationDays(daysOff) {
+//         this._remainingVacationDays -= daysOff;
+//       }
+//   }
+  
+//   class Nurse{
+//     constructor(name, certification)
+//     {
+//       this._name = name;
+//       this._certification = certification;
+//       this._remainingVacationDays = 20;
+//     }
+  
+//     takeVacationDays(daysOff) {
+//         this._remainingVacationDays -= daysOff;
+//       }
+  
+//     addCertification() {
+//       }
+//   }
+//-----------------Inheritance III---------//
+// class HospitalEmployee {
+//     constructor(name) {
+//       this._name = name;
+//       this._remainingVacationDays = 20;
+//     }
+    
+//     get name() {
+//       return this._name;
+//     }
+    
+//     get remainingVacationDays() {
+//       return this._remainingVacationDays;
+//     }
+    
+//     takeVacationDays(daysOff) {
+//       this._remainingVacationDays -= daysOff;
+//     }
+//   }
+  
+//   class Nurse extends HospitalEmployee {
+//     constructor(name, certifications)
+//     {
+//       super(name);
+//       this._certifications = certifications;
+//       this._remainingVacationDays = 20;
+//     }
+  
+//     takeVacationDays(daysOff)
+//     {
+//       this._remainingVacationDays -=    daysOff;
+//     }
+    
+//     addCertification() {}
+//   }
+  
+//   const nurseOlynyk = 
+//       new Nurse('Olynyk', ['Trauma', 'Pediatrics']); 
+//   console.log(nurseOlynyk);
+//-------------------Inheritance IV--------------------------//  
+class HospitalEmployee {
+    constructor(name) {
       this._name = name;
       this._remainingVacationDays = 20;
     }
-  
-    get name(){
+    
+    get name() {
       return this._name;
     }
-  
-    get remainingVacationDays(){
+    
+    get remainingVacationDays() {
       return this._remainingVacationDays;
     }
-  
+    
     takeVacationDays(daysOff) {
-        this._remainingVacationDays -= daysOff;
-      }
-  }
-  
-  class Doctor{
-    constructor(name, insurance)
-    {
-      this._name = name;
-      this._insurance = insurance;
-      this._remainingVacationDays = 20;
+      this._remainingVacationDays -= daysOff;
     }
-  
-    takeVacationDays(daysOff) {
-        this._remainingVacationDays -= daysOff;
-      }
   }
   
-  class Nurse{
-    constructor(name, certification)
-    {
-      this._name = name;
-      this._certification = certification;
-      this._remainingVacationDays = 20;
-    }
-  
-    takeVacationDays(daysOff) {
-        this._remainingVacationDays -= daysOff;
-      }
-  
-    addCertification() {
-      }
+  class Nurse extends HospitalEmployee {
+   constructor(name, certifications) {
+     super(name);
+     this._certifications = certifications;
+   } 
   }
-
+  
+  const nurseOlynyk = new
+                      Nurse(
+                       'Olynyk',
+                       ['Trauma','Pediatrics']);
+  var remainingVacationDays = nurseOlynyk.takeVacationDays(5);
+  console.log(nurseOlynyk.remainingVacationDays);
+  

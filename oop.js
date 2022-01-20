@@ -417,17 +417,31 @@ class Dog {
   // console.log(crewCount);
   // console.log(planetArray);
   //------------------Bracket Notation--------------------//
+  // let spaceship = {
+  //   'Fuel Type' : 'Turbo Fuel',
+  //   'Active Mission' : true,
+  //   homePlanet : 'Earth', 
+  //   numCrew: 5
+  //  };
+  
+  // let propName =  'Active Mission';
+  
+  // // Write your code below
+  // let isActive = spaceship['Active Mission'];
+  // console.log(isActive);
+  //-------------------Property Assignment-------------------//
   let spaceship = {
     'Fuel Type' : 'Turbo Fuel',
-    'Active Mission' : true,
-    homePlanet : 'Earth', 
-    numCrew: 5
-   };
-  
-  let propName =  'Active Mission';
+    homePlanet : 'Earth',
+    color: 'silver',
+    'Secret Mission' : 'Discover life outside of Earth.'
+  };
   
   // Write your code below
-  let isActive = spaceship['Active Mission'];
-  console.log(isActive);
-  
+  //Assign Property Value
+  spaceship.color = 'glorious gold';
+  //Add New Propert in Spaceship
+  spaceship['numEngines'] = 5;
+  //Delete
+  delete spaceship['Secret Mission'];
   

@@ -105,16 +105,82 @@ class Dog {
   
 
   //-----------------Instance------------------//
+  //class Surgeon {
+    //constructor(name, department) {
+      //this.name = name;
+      //this.department = department;
+    //}
+  //}
+  
+  //const surgeonRomero = new Surgeon('Francisco Romero', 'Cardiovascular')
+  
+  //const surgeonJackson = new Surgeon('Ruth Jackson', 'Orthopedics')
+
+  //console.log(surgeonRomero);
+
+  //-----------------Methods---------------------//
+
+  //class Surgeon {
+    //constructor(name, department) {
+      //this._name = name;
+      //this._department = department;
+      //this._remainingVacationDays = 20;
+    //}
+  
+    //get name(){
+      //return this._name;
+    //}
+  
+    //get department(){
+      //return this._department;
+    //}
+  
+    //get remainingVacationDays(){
+      //return this._remainingVacationDays;
+    //}
+  
+    //takeVacationDays(daysOff){
+      //this._remainingVacationDays -= daysOff;
+      //}
+  //}
+  
+  //const surgeonRomero = new Surgeon('Francisco Romero', 'Cardiovascular');
+  //const surgeonJackson = new Surgeon('Ruth Jackson', 'Orthopedics');
+  
+  //const surgenRaja = new Surgeon();
+  //surgenRaja.takeVacationDays(5);
+  
+  //console.log(surgenRaja);
+
+  //----------------Method Calls---------------------//
   class Surgeon {
     constructor(name, department) {
-      this.name = name;
-      this.department = department;
+      this._name = name;
+      this._department = department;
+      this._remainingVacationDays = 20;
+    }
+    
+    get name() {
+      return this._name;
+    }
+    
+    get department() {
+      return this._department;
+    }
+    
+    get remainingVacationDays() {
+      return this._remainingVacationDays;
+    }
+    
+    takeVacationDays(daysOff) {
+      this._remainingVacationDays -= daysOff;
     }
   }
   
-  const surgeonRomero = new Surgeon('Francisco Romero', 'Cardiovascular')
+  const surgeonRomero = new Surgeon('Francisco Romero', 'Cardiovascular');
+  const surgeonJackson = new Surgeon('Ruth Jackson', 'Orthopedics');
   
-  const surgeonJackson = new Surgeon('Ruth Jackson', 'Orthopedics')
+  console.log(surgeonRomero.name);
+  surgeonRomero.takeVacationDays(3);
+  console.log(surgeonRomero.remainingVacationDays);
 
-  console.log(surgeonRomero);
-  

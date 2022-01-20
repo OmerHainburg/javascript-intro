@@ -394,5 +394,27 @@ class Dog {
   console.log(nurseOlynyk.certifications);
   
   console.log(HospitalEmployee.generatePassword());
+
+  //---------------------Creating Object Literals------------//
+  let fasterShip = {
+    'Fuel Type': 'Turbo Fuel',
+    color: 'silver'
+  };
+  console.log(fasterShip);
+  //---------------------Accessing Properties----------------//
+  let spaceship = {
+    homePlanet: 'Earth',
+    color: 'silver',
+    'Fuel Type': 'Turbo Fuel',
+    numCrew: 5,
+    flightPath: ['Venus', 'Mars', 'Saturn']
+  };
+  
+  // Write your code below
+  let crewCount = spaceship.numCrew;
+  let planetArray = spaceship.flightPath;
+
+  console.log(crewCount);
+  console.log(planetArray);
   
   

@@ -518,36 +518,93 @@ let retreatMessage = 'We no longer wish to conquer your planet. It is full of do
 // alienShip.takeOff();
 
 //-------------Nested Objects----------------//
+// let spaceship = {
+//   passengers: [{name: 'Space Dog'}],
+//   telescope: {
+//     yearBuilt: 2018,
+//     model: "91031-XLT",
+//     focalLength: 2032 
+//   },
+//   crew: {
+//     captain: { 
+//       name: 'Sandra', 
+//       degree: 'Computer Engineering', 
+//       encourageTeam() { console.log('We got this!') },
+//      'favorite foods': ['cookies', 'cakes', 'candy', 'spinach'] }
+//   },
+//   engine: {
+//     model: "Nimbus2000"
+//   },
+//   nanoelectronics: {
+//     computer: {
+//       terabytes: 100,
+//       monitors: "HD"
+//     },
+//     'back-up': {
+//       battery: "Lithium",
+//       terabytes: 50
+//     }
+//   }
+// }; 
+
+// let capFave = spaceship.crew.captain['favorite foods'][0];
+
+// let firstPassenger = spaceship.passengers[0];
+// console.log(firstPassenger);
+//--------------Pass By Reference--------------//
+// let spaceship = {
+//   'Fuel Type' : 'Turbo Fuel',
+//   homePlanet : 'Earth'
+// };
+
+// // Write your code below
+// function greenEnergy(spaceship)
+// {
+//   spaceship['Fuel Type'] = 'avocado oil';
+// }
+
+// function remotelyDisable(spaceship)
+// {
+//   spaceship['disabled'] = true;
+// }
+
+// greenEnergy(spaceship);
+// remotelyDisable(spaceship);
+
+// console.log(spaceship);
+
+//------------Looping Through Objects------------//
 let spaceship = {
-  passengers: [{name: 'Space Dog'}],
-  telescope: {
-    yearBuilt: 2018,
-    model: "91031-XLT",
-    focalLength: 2032 
-  },
   crew: {
-    captain: { 
-      name: 'Sandra', 
+  captain: { 
+      name: 'Lily', 
       degree: 'Computer Engineering', 
-      encourageTeam() { console.log('We got this!') },
-     'favorite foods': ['cookies', 'cakes', 'candy', 'spinach'] }
-  },
-  engine: {
-    model: "Nimbus2000"
-  },
-  nanoelectronics: {
-    computer: {
-      terabytes: 100,
-      monitors: "HD"
-    },
-    'back-up': {
-      battery: "Lithium",
-      terabytes: 50
-    }
+      cheerTeam() { console.log('You got this!') } 
+      },
+  'chief officer': { 
+      name: 'Dan', 
+      degree: 'Aerospace Engineering', 
+      agree() { console.log('I agree, captain!') } 
+      },
+  medic: { 
+      name: 'Clementine', 
+      degree: 'Physics', 
+      announce() { console.log(`Jets on!`) } },
+  translator: {
+      name: 'Shauna', 
+      degree: 'Conservation Science', 
+      powerFuel() { console.log('The tank is full!') } 
+      }
   }
 }; 
 
-let capFave = spaceship.crew.captain['favorite foods'][0];
+// Write your code below
+for (var item in spaceship.crew)
+{
+  console.log(`${item}: ${spaceship.crew[item].name}`)
+};
 
-let firstPassenger = spaceship.passengers[0];
-console.log(firstPassenger);
+for (var item in spaceship.crew)
+{
+  console.log(`${spaceship.crew[item].name}: ${spaceship.crew[item].degree}`)
+};

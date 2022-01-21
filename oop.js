@@ -608,3 +608,76 @@ for (var item in spaceship.crew)
 {
   console.log(`${spaceship.crew[item].name}: ${spaceship.crew[item].degree}`)
 };
+
+//--------------------------//
+const calculateWeight = (earthWeight, planet) => {
+  switch (planet) {
+      case 'Mercury':
+          return earthWeight * .378;
+      case 'Venus':
+          return earthWeight * .907;
+      case 'Mars':
+          return earthWeight * .377;
+      case 'Jupiter':
+          return earthWeight * 2.36;
+      case 'Saturn':
+          return earthWeight * .916;
+      default:
+          return 'Invalid Planet Entry. Try: Mercury, Venus, Mars, Jupiter, or Saturn.'
+  }
+}
+
+console.log(calculateWeight(100, 'Jupiter'))
+
+//-------------------------------------------------//
+const truthyOrFalsy = value => {
+  if (value) {
+      return true
+  }
+  return false
+}
+
+truthyOrFalsy('truthy');
+
+/*
+// As a function declaration:
+function truthyOrFalsy(value) {
+  if (value) {
+      return true
+  } else {
+      return false
+  }
+}
+
+// Using a ternary: 
+const truthyOrFalsy = value => value ? true : false 
+*/
+
+//-------------numImaginaryFriends()-------------//
+// Write your function here:
+function numImaginaryFriends(totalFriends)
+{
+  return Math.ceil(totalFriends * .25);
+}
+
+// Uncomment the lines below when you're ready to try out your function
+ console.log(numImaginaryFriends(10)) // Should print 5
+// console.log(numImaginaryFriends(10)) // Should print 3 (2.5 rounded up!)
+
+// We encourage you to add more function calls of your own to test your code!
+
+//---------------sillySentence()------------//
+const sillySentence = (adjective, verb, noun) => `I am so ${adjective} because I ${verb} coding! Time to write some more awesome ${noun}!`
+
+console.log(sillySentence('excited', 'love', 'functions'));
+
+/*
+// With string concatenation:
+const sillySentence = (adjective, verb, noun) => 'I am so ' + adjective + ' because I ' + verb +  ' coding! Time to write some more awesome ' + noun + '!'
+
+
+// As a function declaration:
+function sillySentence(adjective, verb, noun) {
+    return `I am so ${adjective} because I ${verb} coding! Time to write some more awesome ${noun}!`
+}
+*/

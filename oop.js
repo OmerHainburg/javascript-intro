@@ -430,18 +430,124 @@ class Dog {
   // let isActive = spaceship['Active Mission'];
   // console.log(isActive);
   //-------------------Property Assignment-------------------//
-  let spaceship = {
-    'Fuel Type' : 'Turbo Fuel',
-    homePlanet : 'Earth',
-    color: 'silver',
-    'Secret Mission' : 'Discover life outside of Earth.'
-  };
+  // let spaceship = {
+  //   'Fuel Type' : 'Turbo Fuel',
+  //   homePlanet : 'Earth',
+  //   color: 'silver',
+  //   'Secret Mission' : 'Discover life outside of Earth.'
+  // };
   
   // Write your code below
   //Assign Property Value
-  spaceship.color = 'glorious gold';
-  //Add New Propert in Spaceship
-  spaceship['numEngines'] = 5;
-  //Delete
-  delete spaceship['Secret Mission'];
+  // spaceship.color = 'glorious gold';
+  // //Add New Propert in Spaceship
+  // spaceship['numEngines'] = 5;
+  // //Delete
+  // delete spaceship['Secret Mission'];
+
+  //----------------------lifePhase()---------------//
+  const lifePhase = age => {
+    if (age < 0 || age > 140) {
+        return 'This is not a valid age'
+    } else if (age < 4) {
+        return 'baby'
+    } else if (age < 13) {
+        return 'child'
+    } else if (age < 20) {
+        return 'teen'
+    } else if (age < 65) {
+        return 'adult'
+    } else {
+        return 'senior citizen'
+    }
+}
+
+console.log(lifePhase(5));
+
+//------------------finalGrade()----------------------//
+const finalGrade = (midterm, final, homework) => {
+  if ((midterm < 0 || midterm > 100) || (final < 0 || final > 100) || (homework < 0 || homework > 100)) {
+      return 'You have entered an invalid grade.'
+  }
+  let average = (midterm + final + homework) / 3
+  if (average < 60) {
+      return 'F'
+  }
+  else if (average < 70) {
+      return 'D'
+  }
+  else if (average < 80) {
+      return 'C'
+  }
+  else if (average < 90) {
+      return 'B'
+  } else {
+      return 'A'
+  }
+}
+
+//-------------reportingForDuty()-------------//
+function reportingForDuty(rank, lastName)
+{
+  return rank + " " + lastName + " reporting for duty!";
+}
+
+console.log(reportingForDuty('Private', 'Fido'));
   
+//---------------------------------------------//
+const rollTheDice = () => {
+  let die1 = Math.floor(Math.random() * 6 + 1)
+  let die2 = Math.floor(Math.random() * 6 + 1)
+  return die1 + die2
+} 
+
+//--------------Methods---------------//
+let retreatMessage = 'We no longer wish to conquer your planet. It is full of dogs, which we do not care for.';
+
+// Write your code below
+// const alienShip = {
+//   retreat() {
+//     console.log(retreatMessage);
+//   },
+//   takeOff() {
+//     console.log('Spim... Borp... Glix... Blastoff!');
+//   }
+// };
+
+// alienShip.retreat();
+// alienShip.takeOff();
+
+//-------------Nested Objects----------------//
+let spaceship = {
+  passengers: [{name: 'Space Dog'}],
+  telescope: {
+    yearBuilt: 2018,
+    model: "91031-XLT",
+    focalLength: 2032 
+  },
+  crew: {
+    captain: { 
+      name: 'Sandra', 
+      degree: 'Computer Engineering', 
+      encourageTeam() { console.log('We got this!') },
+     'favorite foods': ['cookies', 'cakes', 'candy', 'spinach'] }
+  },
+  engine: {
+    model: "Nimbus2000"
+  },
+  nanoelectronics: {
+    computer: {
+      terabytes: 100,
+      monitors: "HD"
+    },
+    'back-up': {
+      battery: "Lithium",
+      terabytes: 50
+    }
+  }
+}; 
+
+let capFave = spaceship.crew.captain['favorite foods'][0];
+
+let firstPassenger = spaceship.passengers[0];
+console.log(firstPassenger);

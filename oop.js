@@ -681,3 +681,52 @@ function sillySentence(adjective, verb, noun) {
     return `I am so ${adjective} because I ${verb} coding! Time to write some more awesome ${noun}!`
 }
 */
+
+//---------------howOld()-------------//
+/* 
+Our solution is written as a function expression and uses string interpolation, but it would be equally acceptable to use a function declaration and/or string concatenation
+*/
+
+const howOld = (age, year) => {
+  // The following two lines make it so that our function always knows the current year.
+      let dateToday = new Date();
+      let thisYear = dateToday.getFullYear();
+  // It is totally ok if your function used the current year directly!
+    
+      const yearDifference = year - thisYear
+      const newAge = age + yearDifference
+      if (newAge > age) {
+          return `You will be ${newAge} in the year ${year}`
+      } else if (newAge < 0) {
+          return `The year ${year} was ${-newAge} years before you were born`
+      } else {
+          return `You were ${newAge} in the year ${year}`
+      }
+  }
+
+  //---------------------------------//
+  const whatRelation = percentSharedDNA => {
+    if (percentSharedDNA === 100) {
+        return 'You are likely identical twins.'
+    }
+    if (percentSharedDNA > 34) {
+        return 'You are likely parent and child or full siblings.'
+    }
+    if (percentSharedDNA > 13) {
+        return 'You are likely grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings.'
+    }
+    if (percentSharedDNA > 5) {
+        return 'You are likely 1st cousins.'
+    }
+    if (percentSharedDNA > 2) {
+        return 'You are likely 2nd cousins.'
+    }
+    if (percentSharedDNA > 0) {
+        return 'You are likely 3rd cousins'
+    }
+    return 'You are likely not related.'
+}
+
+console.log(whatRelation(34))
+
+console.log(whatRelation(3))

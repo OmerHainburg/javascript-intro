@@ -804,3 +804,107 @@ function toEmoticon(meaning) {
 */
 console.log(toEmoticon("whatever"))
 
+//-----------------------------------------------//
+// Create an object (with JSON) with 2 students:
+// – first name: Han / last name: Solo
+// – first name : Chew / last name : Bacca
+
+let students  = {
+  firstname: ['Han', 'Chew'],
+  lastname: ['Solo', 'Bacca']
+}
+
+console.log(students.firstname);
+
+//------------------------Parse-----------------//
+let text =
+ {
+   "name" : "Dupont",
+   "first_name" : "Jean"
+}
+
+console.log(text.first_name);
+
+//----------------------------------------------//
+let cat = {
+  "tiredness" : "tired",
+  "hunger" : "hungry",
+  "loneliness" : "lonely", 
+  "happiness" : "happy"
+}
+
+function remotelyAdd(obj)
+ {
+  obj['feed'] = "omer";
+  obj['sleep'] = "zubair";
+  obj['pet'] = "pet";
+ }
+
+ remotelyAdd(cat);
+
+ console.log(cat);
+
+ function removeProp(obj)
+ {
+   delete cat.hunger;
+ }
+ 
+ //removeProp(cat);
+ console.log(cat);
+
+ // Write your code below
+for (var item in cat)
+{
+  //console.log(`Paws is really ${[item]}`);
+};
+
+console.log(`Paws is really ${cat.hunger}`);
+console.log(`Paws is Very ${cat.happiness}`);
+
+//------------------Chat Window-----------------//
+function addMessage(message, me = true) {
+  const template = `<div class="message">
+    <div class="${
+      me ? "myMessage" : "fromThem"
+    }" data-date="${new Date().toLocaleTimeString()}">
+      <p>${message}</p>
+      <date> ${new Date().toLocaleTimeString()} </date>
+    </div>
+  </div>`;
+
+  document.querySelector(".chat .messages").innerHTML += template;
+}
+
+function typing() {
+  document.querySelector(".typing").classList.toggle("active");
+  setTimeout(() => {
+    document.querySelector(".typing").classList.toggle("active");
+  }, 1000);
+}
+
+typing();
+addMessage("Hi!", false);
+addMessage("In this exercise you will work with events in JS", false);
+addMessage("Let's go!");
+
+/**
+ * Listen to the submit of the form and add a new message
+ * with addMessage()
+ */
+
+// Code here
+
+/**
+ * Listen to the click on each message and create an alert
+ * with the date from 'data-date'
+ * https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
+ */
+
+// Code here
+
+/**
+ * Listen to every keypress (from the keyboard) in the input and call
+ * the function typing()
+ */
+
+// Code here

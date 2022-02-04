@@ -140,8 +140,14 @@ function spEng(sentence){
      const unique = Array.from(new Set(categories));
 
      console.log(unique.sort());
+     
+     //Write a function that doubles every second integer in a list, starting from the left.
+     const doubleEveryOther = (a) => a.map((c,i) => i % 2 == 0 ? c : 2 * c);
 
-    
+    // This time no story, no theory. The examples below show you how to write function accum:
+    function accum(s) {
+      return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
+    }
 
    
 

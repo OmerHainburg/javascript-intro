@@ -289,4 +289,74 @@ function dateNbDays(a0, a, p) {
   return date.toISOString().split('T')[0];
 }
 
+//For every good kata idea there seem to be quite a few bad ones!
+//In this kata you need to check the provided array (x) for good ideas 'good' and
+//bad ideas 'bad'. If there are one or two good ideas, return 'Publish!', 
+//if there are more than 2 return 'I smell a series!'. If there are no good ideas,
+//as is often the case, return 'Fail!'.
+const well = x => {
+  const good_count = x.filter(x => x == 'good').length;
+  console.log(good_count < 1 ? 'Fail!' : 
+         good_count < 3 ? 'Publish!' : 'I smell a series!');
+}
 
+well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']), 'I smell a series!';
+
+//It's pretty straightforward. Your goal is to create a function that removes the first and
+//last characters of a string. You're given one parameter, the original string.
+//You don't have to worry with strings with less than two characters.
+function removeChar(str) {
+  console.log(str.slice(1, -1));
+}
+
+removeChar('Omer');
+
+//Implement the method length, which accepts a linked list (head),
+//and returns the length of the list.
+//For example: Given the list: 1 -> 2 -> 3 -> 4, length should return 4.
+//Note: the list may be null and can hold any type of value.Good luck!
+function length(head) {
+  if (head == null) return 0;
+  console.log(1 + length(head.next));
+}
+
+length([1,2,3,4,5]);
+
+//It's your best friend's birthday! You already bought a box for the present.
+//Now you want to pack the present in the box. You want to decorate the box with a ribbon and a bow.
+//But how much cm of ribbon do you need?
+//Write the method wrap that calculates that!
+//A box has a height, a width and a length (in cm). The ribbon is crossed on the side
+//with the largest area. Opposite this side (also the side with the largest area) the
+//loop is bound, calculate with 20 cm more tape.
+function wrap(height, width, length){
+  console.log(2 * (height + width + length + Math.min(height, width, length) + 10));
+}
+
+wrap(2, 4, 5);
+
+//Our football team finished the championship. The result of each match look like "x:y".
+//Results of all matches are recorded in the collection.
+//For example: ["3:1", "2:2", "0:1", ...]
+//Write a function that takes such collection and counts the points of our team in the
+//championship. Rules for counting points for each match:
+//if x>y - 3 points
+//if x<y - 0 point
+//if x=y - 1 point
+//Notes:
+//there are 10 matches in the championship
+//0 <= x <= 4
+//0 <= y <= 4
+const pointsFootball=games=>games.reduce((output,current)=>{
+  console.log(output += current[0]>current[2] ? 3 : current[0]===current[2] ? 1 : 0);
+},0)
+
+
+//In a small town the population is p0 = 1000 at the beginning of a year.
+//The population regularly increases by 2 percent per year and moreover 50 new
+//inhabitants per year come to live in the town. How many years does the town need to 
+//see its population greater or equal to p = 1200 inhabitants?
+function nbYear(p0, percent, aug, p) {
+  for(var y = 0; p0 < p; y++) p0 = p0 * (1 + percent / 100) + aug;
+  return y;
+}
